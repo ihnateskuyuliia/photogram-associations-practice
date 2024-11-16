@@ -24,6 +24,7 @@ class User < ApplicationRecord
   # User#comments: returns rows from the comments table associated to this user by the author_id column
 
   # User#own_photos: returns rows from the photos table  associated to this user by the owner_id column
+  belongs_to(:own_photos, :class_name => "Photo", :foreign_key => "owner_id")
 
   # User#likes: returns rows from the likes table associated to this user by the fan_id column
 
